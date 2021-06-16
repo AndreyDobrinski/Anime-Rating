@@ -1,21 +1,65 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useState } from 'react';
+import { StyleSheet, View, TouchableWithoutFeedback, Keyboard } from 'react-native';
+import * as Font from 'expo-font';
+import AppLoading from 'expo-app-loading';
+
+
+
+
+
+// import { AppNavigator } from './routes/HomeStack';
+import AppDrawer from './routes/Drawer';
+
+
+const getFonts = () => Font.loadAsync({
+  'russoOne': require('./assets/Fonts/RussoOne-Regular.ttf')
+})
+
+
+
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+
+  const [fontLoaded, setFontLoaded] = useState(false)
+
+
+  if (fontLoaded) {
+    return (
+      <TouchableWithoutFeedback onPress={() => {
+        Keyboard.dismiss()
+        console.log('byebye Keyboard')
+      }}>
+
+        <View style={styles.container}>
+
+          <View style={styles.routs}>
+            {/* <AppNavigator /> */}
+            <AppDrawer />
+          </View>
+
+        </View>
+      </TouchableWithoutFeedback>
+    )
+  } else {
+    return (
+      <AppLoading
+        startAsync={getFonts}
+        onFinish={() => setFontLoaded(true)}
+        onError={console.warn}
+      />
+    )
+  }
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
   },
+  routs: {
+    flex: 1,
+  },
+
 });
+
+
