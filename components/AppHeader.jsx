@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View, Text, Dimensions, Image   } from 'react-native';
+import { StyleSheet, View, Text, Dimensions, Image } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 import { DrawerActions } from '@react-navigation/native';
 
@@ -29,6 +29,8 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'center',
+        // marginBottom: 10,
+
     },
     burger: {
         position: 'absolute',
@@ -36,7 +38,7 @@ const styles = StyleSheet.create({
 
     },
     headerHolder: {
-        flexDirection:'row',
+        flexDirection: 'row',
     },
     headerTxt: {
         fontWeight: 'bold',
@@ -48,7 +50,7 @@ const styles = StyleSheet.create({
     headerImg: {
         width: 26,
         height: 26,
-        marginRight:15,
+        marginRight: 15,
 
     }
 

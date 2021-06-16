@@ -5,25 +5,12 @@ import { StyleSheet } from 'react-native';
 export const globalStyles = StyleSheet.create({
 
     content: {
-        flex: 1,
-    },
-    txtList: {
-        marginTop: 20,
-    },
-    txtPreview: {
-        borderWidth: 2,
-        marginVertical: 20,
-        marginHorizontal: 30,
+        // flex: 1,
     },
     detailsHolder: {
         margin: 10,
         padding: 10,
 
-    },
-    titleTxt: {
-        fontSize: 14,
-        textAlign: 'center',
-        margin: 10,
     },
     detailsTxt: {
         fontSize: 18,
